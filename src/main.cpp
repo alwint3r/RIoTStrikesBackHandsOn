@@ -47,6 +47,11 @@ void loop() {
     delay(3000);
 }
 
+/**
+ * @brief Task for displaying result of measurement on the OLED
+ * 
+ * @param arg unused
+ */
 void displayValuesTask(void* arg) {
     int displayInterval = 2000;
 
@@ -58,6 +63,11 @@ void displayValuesTask(void* arg) {
     }
 }
 
+/**
+ * @brief Display GPS location information on the OLED
+ * 
+ * @param value measurement data from sensors on Alora
+ */
 void displayGPSInformation(SensorValues& value) {
     display.clearDisplay();
     display.setTextColor(WHITE);
@@ -77,6 +87,11 @@ void displayGPSInformation(SensorValues& value) {
     display.display();
 }
 
+/**
+ * @brief Display sensor values (temperature and light intensity) on the OLED
+ * 
+ * @param value 
+ */
 void displaySensorValue(SensorValues& value) {
     display.clearDisplay();
     display.setTextColor(WHITE);
